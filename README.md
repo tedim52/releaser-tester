@@ -2,4 +2,4 @@
 
 A test repo to test Kurtosis' new release process.
 
-TODO: Add information about the new release process.
+The goal of the new release process is to decrease release times.
