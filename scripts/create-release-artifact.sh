@@ -20,7 +20,7 @@ show_helptext_and_exit() {
     echo "  new_version   The version of this repo that is about to released"
     echo ""
     exit 1  # Exit with an error so that if this is accidentally called by CI, the script will fail
-
+}
 
 new_version="${1:-}"
 
@@ -29,9 +29,7 @@ if [ -z "${new_version}" ]; then
     show_helptext_and_exit
 fi
 
-
 # ==================================================================================================
 #                                             Main Logic
 # ==================================================================================================
-# bash "${UPDATE_PACKAGE_VERSIONS_SCRIPT_FILENAME}" "${root_dirpath}" "${new_version}"
-echo "Completed PreRelease Script"
+bash "touch" "${new_version}.txt" 

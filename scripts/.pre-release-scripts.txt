@@ -1,1 +1,2 @@
 update-package-versions.sh
+create-release-artifact.sh
