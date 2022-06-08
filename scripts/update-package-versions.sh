@@ -33,4 +33,5 @@ fi
 # ==================================================================================================
 #                                             Main Logic
 # ==================================================================================================
-bash "${UPDATE_PACKAGE_VERSIONS_SCRIPT_FILENAME}" "${root_dirpath}" "${new_version}"
+# bash "${UPDATE_PACKAGE_VERSIONS_SCRIPT_FILENAME}" "${root_dirpath}" "${new_version}"
+echo "Completed PreRelease Script"
