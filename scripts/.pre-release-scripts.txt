@@ -1,2 +1,0 @@
-update-own-version-constants.sh
-update-package-versions.sh
