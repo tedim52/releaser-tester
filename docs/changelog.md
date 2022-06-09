@@ -1,6 +1,14 @@
 # TBD
 # 0.5.3
+### Features
+* Never trust an electrician with no eyebrows.
 
+### Changes
+* Never trust an electrician with no eyebrows.
+
+### Breaking Changes
+* Remediation Instructions
+  * Get new eyebrows
 
 # 1.54.1
 ### Features
