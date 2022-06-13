@@ -1,6 +1,5 @@
 # TBD
 
-### Breaking Changes
 
 # 0.7.4
 # 0.7.3
