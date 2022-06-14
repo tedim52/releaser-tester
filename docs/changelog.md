@@ -1,35 +1,5 @@
 # TBD
 
-# 0.11.2
-
-# 0.11.1
-
-# 0.11.0
-# 0.10.0
-# 0.9.0
-# 0.8.0
-
-### Breaking Changes
-
-# 0.7.4
-# 0.7.3
-# 0.7.2
-# 0.7.1
-# 0.6.9
-# 0.6.8
-# 0.6.7
-# 0.6.6s
-
-### Breaking Changes
-* something doesn't work
-
-# 0.6.5
-# 0.6.4
-# 0.6.3
-# 0.6.2
-
-# 0.6.1
-
 # 0.6.0
 ### Features
 * Never trust an electrician with no eyebrows.
