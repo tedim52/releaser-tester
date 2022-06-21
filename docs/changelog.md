@@ -1,6 +1,9 @@
 # TBD
 
 # 0.13.1
+## Features
+* Remediation Instructions
+  * Get even better eyebrows
 
 # 0.13.0
 ### Breaking Changes
