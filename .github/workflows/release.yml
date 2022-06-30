@@ -16,7 +16,10 @@ jobs:
         sudo apt update
         sudo apt install kudet
     - name: Authenticate
+      
     - name: Execute the release
+      env: # Set the secret as an input
+        ssh-key: ${{ secrets.SSH_KEY }}
       run:
         kudet release 
     
