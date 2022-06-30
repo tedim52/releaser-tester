@@ -1,0 +1,22 @@
+name: Release Workflow
+
+on:
+  workflow_dispatch:
+        
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Install Kudet
+      run: |
+        echo "deb [trusted=yes] https://apt.fury.io/kurtosis-tech/ /" | sudo tee /etc/apt/sources.list.d/kurtosis.list
+        sudo apt update
+        sudo apt install kudet
+    - name: Authenticate
+    - name: Execute the release
+      run:
+        kudet release 
+    
