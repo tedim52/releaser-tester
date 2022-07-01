@@ -24,5 +24,6 @@ jobs:
       env: # Set the secret as an input
         ssh-key: ${{ secrets.SSH_KEY }}
       run:
+        ssh-add .
         kudet release 
     
