@@ -14,10 +14,11 @@ jobs:
         echo "deb [trusted=yes] https://apt.fury.io/kurtosis-tech/ /" | sudo tee /etc/apt/sources.list.d/kurtosis.list
         sudo apt update
         sudo apt install kudet
-    - name: Setup Git User
-      uses: fregante/setup-git-user@v1
     - name: Checkout
       uses: actions/checkout@v2
+      run: |
+        git config --global user.email "tedi.m52@gmail.com"
+        git config --global user.name "Tewodros Mitiku"
     - name: Execute the release
       env: # Set the secret as an input
         ssh-key: ${{ secrets.SSH_KEY }}
