@@ -2,13 +2,6 @@ name: Release Workflow
 
 on:
   workflow_dispatch:
-#    input:
-#      User Name:
-#        description: "Please enter your name. This will be added to the release commits."
-#        required: true
-#      Email:
-#        description: "Please enter your email. This will be added to the release commits."
-#        required: true
 
 
 jobs:
