@@ -2,6 +2,13 @@ name: Release Workflow
 
 on:
   workflow_dispatch:
+#    input:
+#      User Name:
+#        description: "Please enter your name. This will be added to the release commits."
+#        required: true
+#      Email:
+#        description: "Please enter your email. This will be added to the release commits."
+#        required: true
 
 
 jobs:
@@ -15,7 +22,8 @@ jobs:
         sudo apt update
         sudo apt install kudet
     - name: Checkout
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - uses: fregante/setup-git-user@v1
     - name: Execute the release
       env: # Set the secret as an input
         ssh-key: ${{ secrets.SSH_KEY }}
