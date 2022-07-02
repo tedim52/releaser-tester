@@ -33,5 +33,4 @@ jobs:
         ssh-key: ${{ secrets.SSH_KEY }}
       run:
         ssh-add .
-        kudet release 
-    
+        kudet release
