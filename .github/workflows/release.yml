@@ -36,6 +36,6 @@ jobs:
         known_hosts: unnecessary
     - name: Execute the release
       run:
-        ssh-agent -s
+        ssh-agent /bin/ssh
         ssh-add ~/.ssh
         kudet release
