@@ -35,6 +35,8 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         known_hosts: ${{ secrets.known_hosts }}
     - name: Execute the release
+
       run:
-        ssh-add .
+        git config --global user.name="{{ inputs.username }}"
+        git config --global user.email="{{ inputs.email }}"
         kudet release
