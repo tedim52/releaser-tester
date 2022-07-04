@@ -26,16 +26,9 @@ jobs:
       uses: actions/checkout@v2
     - name: Setup Git Config
       run: |
-        git config --global user.email "${{ inputs.username }}"
-        git config --global user.name "${{ inputs.email }}"
-      # Install the SSH key so that release command uses the ssh key to authenticate
-    - name: Install the SSH key
-      uses: shimataro/ssh-key-action@v2
-      with:
-        key: ${{ secrets.SSH_KEY }}
-        name: id_rsa
-        known_hosts: unnecessary
+        git config --global user.email "Kurtosis Bot"
+        git config --global user.name "hello@kurtosistech.com"
     - name: Execute the release
+      # should we pass in kurtosis bots token or should we make it an env variable?
       run:
-        ssh-add ~/.ssh/id_rsa
         kudet release
