@@ -33,7 +33,9 @@ jobs:
       uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SSH_KEY }}
+        name: id_rsa
         known_hosts: unnecessary
     - name: Execute the release
       run:
+        ssh-add ~/.ssh/id_rsa
         kudet release
