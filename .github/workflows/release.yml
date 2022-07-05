@@ -3,14 +3,10 @@ name: Release Workflow
 on:
   workflow_dispatch:
     inputs:
-      username:
-        description: 'Kurtosis Developers name - for commit message'
+      bump_major:
+        description: 'Do you want to bump the major version on this release?'
         required: true
-        type: string
-      email:
-        description: 'Kurtosis Developers email - for commit message'
-        required: true
-        type: string
+        type: boolean
 
 jobs:
   release:
@@ -25,10 +21,24 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Setup Git Config
+      # kudet release requires an email for the commit message, so we pass kurtosis tech email
       run: |
-        git config --global user.email "Kurtosis Bot"
-        git config --global user.name "hello@kurtosistech.com"
-    - name: Execute the release
-      # should we pass in kurtosis bots token or should we make it an env variable?
-      run:
-        kudet release
+        git config --global user.name ${{ github.actor }}
+        git config --global user.email "hello@kurtosistech.com"
+    - name: Check that user running Github action has proper role
+      id: checkMemberRole
+      uses: tspascoal/get-user-teams-membership@v1
+      with:
+        username: ${{ github.actor }}
+        team: 'engineers'
+        GITHUB_TOKEN: ${{ secrets.RELEASER_TOKEN }}
+    - name: Execute the release with bump major if its true
+      if: ${{ inputs.bump_major == true && steps.checkMemberRole.outputs.isTeamMember == 'true' }}
+      # This RELEASER_TOKEN is an org secret that allows the action to run as kurtosisbot
+      # This is needed because kurtosisbot is the only one able to bypass branche protection rules and
+      # commit straight to master
+      run: kudet release {{ secrets.RELEASER_TOKEN }} --bump-major
+    - name: Execute the release without bumping major if its false
+      ${{ inputs.bump_major == true && steps.checkMemberRole.outputs.isTeamMember == 'true' }}
+      if: ${{ inputs.bump_major == false }}
+      run: kudet release {{ secrets.RELEASER_TOKEN }}
