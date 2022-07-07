@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07413514-87e6-4c12-b265-ed8c64173466" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/scripts/say-hello.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/say-hello.sh" afterDir="false" />
-    </list>
+    <list default="true" id="07413514-87e6-4c12-b265-ed8c64173466" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
