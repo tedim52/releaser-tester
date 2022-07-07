@@ -1,2 +1,1 @@
-scripts/create-release-artifact.sh
-scripts/update-package-versions.sh
+scripts/say-hello.sh
