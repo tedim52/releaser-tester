@@ -3,10 +3,18 @@ name: Release Workflow
 on:
   workflow_dispatch:
     inputs:
-      bump_major:
+      bumpmajor:
         description: 'Do you want to bump the major version on this release?'
         required: true
         type: boolean
+    username:
+      description: 'Kurtosis Developers name - for commit message'
+      required: true
+      type: string
+    email:
+      description: 'Kurtosis Developers email - for commit message'
+      required: true
+      type: string
 
 jobs:
   release:
